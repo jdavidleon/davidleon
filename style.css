@@ -157,6 +157,53 @@
   }
   
   
+  /*     OBJETIVO     */
+  .objetivo {
+    background-color: var(--second-color);
+    text-align: center;
+  }
+
+  .objetivo h2 {
+    margin-bottom: 1rem;
+  }
+
+  .objetivo p {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  .perfil {
+    background-color: var(--second-color);
+    text-align: center;
+  }
+
+  .perfil h2 {
+    margin-bottom: 1rem;
+  }
+
+  .perfil .perfil-name {
+    font-size: 1.25rem;
+    color: var(--link-color);
+    margin-bottom: 0.25rem;
+  }
+
+  .perfil .perfil-role {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+  }
+
+  .perfil p {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    line-height: 1.6;
+  }
+
+
   /*          SERVICE          */
   .service {
     background-color: var(--color-opacity);
@@ -175,8 +222,159 @@
     height: auto;
     margin: 5rem auto 0;
   }
+
+  /*          TRABAJOS          */
+  .trabajos {
+    background-color: var(--color-opacity);
+  }
+  
+  .trabajos h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .trabajos-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+  
+  .trabajo-card {
+    width: 100%;
+    max-width: 300px;
+    height: 280px;
+    border: 1px solid rgba(225,225,225,0.5);
+    border-radius: 1rem;
+    background-color: rgba(200,200,200,0.3);
+    backdrop-filter: blur(3px);
+    margin: 0 auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .trabajo-image {
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--second-color);
+  }
+  
+  .trabajo-image svg {
+    width: 48px;
+    height: 48px;
+    stroke: var(--link-color);
+  }
+  
+  .trabajo-content {
+    padding: 1rem;
+    flex: 1;
+    overflow: hidden;
+  }
+  
+  .trabajo-content h3 {
+    margin-bottom: 0.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .trabajo-content p {
+    font-size: 0.875rem;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .funciones {
+    background-color: var(--second-color);
+    text-align: center;
+  }
+  
+  .funciones h2 {
+    margin-bottom: 2rem;
+  }
+  
+  .funciones-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+  
+  .funcion-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    border: 1px solid rgba(225,225,225,0.5);
+    border-radius: 1rem;
+    background-color: rgba(200,200,200,0.3);
+    backdrop-filter: blur(3px);
+  }
+  
+  .funcion-item svg {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    fill: var(--link-color);
+    margin-top: 0.25rem;
+  }
+  
+  .funcion-item p {
+    text-align: left;
+    margin: 0;
+    font-size: 0.95rem;
+  }
   
   
+  .habilidades {
+    background-color: var(--color-opacity);
+    text-align: center;
+  }
+
+  .habilidades h2 {
+    margin-bottom: 2rem;
+  }
+
+  .habilidades-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  .habilidad-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid rgba(225,225,225,0.3);
+    border-radius: 0.5rem;
+  }
+
+  .habilidad-item svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    fill: var(--link-color);
+    margin-top: 0.15rem;
+  }
+
+  .habilidad-item p {
+    text-align: left;
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
   /*          CONTANCT           */
   .main-contact-container {
     margin-bottom: 6rem;
@@ -342,7 +540,11 @@
   }
 
   .about,
-  .contact {
+  .objetivo,
+  .perfil,
+  .funciones,
+  .contact,
+  .habilidades {
     max-width: var(--max-width);
     margin-right: auto;
     margin-left: auto;
@@ -443,9 +645,21 @@
   align-items: center;
   margin: 5rem;
   } 
- 
+  
   .content-card {
   background-size: 50%;
   background-position: center;
  }
+
+  /*       TRABAJOS     */
+  .trabajos-container {
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .trabajo-card {
+    max-width: 320px;
+    height: 300px;
+  }
 }
