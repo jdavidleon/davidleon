@@ -22,3 +22,4 @@ npm run preview
 ```
 
 The site is configured for the `/davidleon` GitHub Pages base path. Pushes to the `gh-pages` branch trigger `.github/workflows/deploy.yml`, which builds and deploys the static output through GitHub Actions.
+
