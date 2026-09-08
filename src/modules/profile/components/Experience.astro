@@ -1,0 +1,17 @@
+---
+import { ExperienceCards } from "./ExperienceCards";
+import { experienceProjects } from "../data/experience-projects";
+---
+
+<section id="experiencia" class="experience" aria-labelledby="experience-title">
+  <div class="experience__inner">
+    <header class="experience__header">
+      <p class="experience__eyebrow">AI Engineer / AI Developer</p>
+      <h2 id="experience-title">Experiencia aplicada</h2>
+      <p>
+        Capacidades para llevar agentes de IA a producción junto con automatización, cloud y datos empresariales.
+      </p>
+    </header>
+    <ExperienceCards client:load projects={experienceProjects} />
+  </div>
+</section>

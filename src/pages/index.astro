@@ -2,6 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 import PortfolioHero from "../components/organisms/PortfolioHero.astro";
 import SiteHeader from "../components/organisms/SiteHeader.astro";
+import Experience from "../modules/profile/components/Experience.astro";
+import ExpectedTechnicalSkills from "../modules/profile/components/ExpectedTechnicalSkills.astro";
 
 const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
 const assetPath = (path: string) => `${basePath}/${path}`;
@@ -12,70 +14,8 @@ const assetPath = (path: string) => `${basePath}/${path}`;
 
   <main>
     <PortfolioHero />
-
-    <section id="about" class="about">
-    <article class="about-me">
-      <aside class="about-text-title">
-        <h2>David León</h2>
-        <h5>software developer</h5>
-      </aside>
-      <aside class="about-content">
-        <div>
-          <p class="">
-            Desarrollador frontend y diseñador completamente autodidacta, entusiasta de la tecnología y aprendizaje.
-          </p>
-          <p class="">
-            Puedo colaborarte en el desarrollo de acuerdo a tus necesidades, haciendo el uso de frameworks o codigo con JS, HTML, CSS; páginas interactivas o estáticas, código reutilizable y escalable.
-          </p>
-          <p>
-            ¿Deseas que te acompañe en la realización de tu proyecto?.  Me encuentro con las capacidades para colaborar con los tus intereses propuestos.
-          </p>
-          <div class="hyperlink-btn-container">
-            <a class="hyperlink-btn" href="https://cvapp.es/r/vmCQvWX9h" target="_blank" rel="noopener">MIRA MI CV</a>
-          </div>
-        </div>
-        <div class="about-img-filling" style="margin: 2rem 0; margin-left: 2rem ">
-          <img src={assetPath("image/about_filling.svg")} alt="about filling ">
-        </div>
-      </aside>      
-    </article>
-    <article class="about-tech">
-      <h2 class="">Mis Habilidades</h2>
-      <div class="container-icon-tech">
-        <figure>
-          <img class="tech-icon" src={assetPath("image/logo_Python.svg")} alt="Python">
-        </figure>
-        <figure>
-          <img class="tech-icon" src={assetPath("image/logo_JavaScript.svg")} alt="JavaScript">
-        </figure>
-        <figure>
-          <img class="tech-icon" src={assetPath("image/logo_React.svg")} alt="React">
-        </figure>
-        <figure>
-          <img class="tech-icon" src={assetPath("image/logo_HTML.svg")} alt="Html">
-        </figure>
-        <figure>
-          <img class="tech-icon" src={assetPath("image/logo_CSS.svg")} alt="Css">
-        </figure>
-      </div>
-    </article>
-  </section>
-
-  <section id="objetivo" class="objetivo">
-    <h2>Objetivo</h2>
-    <p>
-      Como AI-Engineer, implemento soluciones de inteligencia artificial: modelos de ML, sistemas de NLP, chatbots inteligentes, análisis predictivo e integración de LLMs para optimizar procesos empresariales.
-    </p>
-  </section>
-
-  <section id="perfil" class="perfil">
-    <h2>Perfil Profesional</h2>
-    <h3 class="perfil-name">Jesús David León Chito</h3>
-    <h4 class="perfil-role">AI Engineer / AI Developer</h4>
-    <p>
-      IA Agéntica, Tool Calling, razonamiento y ejecución de múltiples pasos, arquitecturas Planner/Executor/Validator, RAG, Prompt Engineering, memoria y gestión de contexto, evaluación y testing de LLMs, detección de alucinaciones, monitorización y detección de Drift. Cuento con experiencia en APIs y servicios backend, despliegue en producción sobre AWS/Azure/GCP, herramientas de automatización como UiPath, Power Automate y RPA, análisis de datos con Power BI, y administración de bases de datos como SQL Server y Oracle. Además, sólidas competencias en DevOps, operaciones, liderazgo y mentoría.
-    </p>
-  </section>
+    <ExpectedTechnicalSkills />
+    <Experience />
 
   <section  id="service" class="service">
     <div class="service-content">
@@ -89,9 +29,9 @@ const assetPath = (path: string) => `${basePath}/${path}`;
                 d="M9.293 9.293L5.586 13 9.293 16.707 10.707 15.293 8.414 13 10.707 10.707zM14.707 9.293L13.293 10.707 15.586 13 13.293 15.293 14.707 16.707 18.414 13z" />
             </svg>
             <aside class="service-elemet-text">
-              <h2>Programacion</h2>
+              <h2>MCP</h2>
               <p>
-                Desarrollo sitios para plataformas Web. Te ayudo en la implementacion y construpcion de plataformas responsivas desde el Frontend.
+                Diseño e integración de servidores MCP para conectar agentes de IA con herramientas, datos y sistemas empresariales.
               </p>
             </aside>
           </article>
@@ -101,9 +41,9 @@ const assetPath = (path: string) => `${basePath}/${path}`;
                 d="M20,3H7C5.897,3,5,3.897,5,5v2H4C2.897,7,2,7.897,2,9v10c0,1.103,0.897,2,2,2h6c1.103,0,2-0.897,2-2h8c1.103,0,2-0.897,2-2 V5C22,3.897,21.103,3,20,3z M6,9h4l-0.003,9H4V9H6z M12,17V9c0-1.103-0.897-2-2-2H7V5h11v12H12z" />
             </svg>
             <aside class="service-elemet-text">
-              <h2>Diseño Web</h2>
+              <h2>Agentes inteligentes</h2>
               <p>
-                Llevo de tu imaginacion a la realidad. maqueto y doy forma a tus diseños estáticos para convertirlos en asombrosos sitios web responsivos, óptimos y accesibles.
+                Desarrollo de agentes con tool calling, memoria y gestión de contexto para ejecutar tareas de varios pasos.
               </p>
             </aside>
           </article>
@@ -121,8 +61,8 @@ const assetPath = (path: string) => `${basePath}/${path}`;
               <circle cx="17.657" cy="17.658" r="2" />
             </svg>
             <aside class="service-elemet-text">
-              <h2>WPO</h2>
-              <p>Optimización del rendimiento web. Me encargo que tu sitio web mejore su tiempo de carga y respuesta.</p>
+              <h2>RAG</h2>
+              <p>Implementación de recuperación aumentada para generar respuestas basadas en conocimiento relevante y verificable.</p>
             </aside>
           </article>
           <article class="service-container">
@@ -133,15 +73,15 @@ const assetPath = (path: string) => `${basePath}/${path}`;
                 d="M11.412,8.586C11.791,8.966,12,9.468,12,10h2c0-1.065-0.416-2.069-1.174-2.828c-1.514-1.512-4.139-1.512-5.652,0 l1.412,1.416C9.346,7.83,10.656,7.832,11.412,8.586z" />
             </svg>
             <aside class="service-elemet-text">
-              <h2>SEO</h2>
-              <p>Optimización de motores de búsqueda. Me encargo de Optimizar tu sitio para que mejore su posición en los buscadores orgánicamente.</p>
+              <h2>Sistemas multiagente</h2>
+              <p>Orquestación de equipos de agentes con patrones Planner, Executor y Validator para flujos controlados y trazables.</p>
             </aside>
           </article>
         </div>
     </div>
   </section>
 
-  <section id="trabajos" class="trabajos">
+  <section id="trabajos" class="trabajos" hidden aria-hidden="true">
     <h2>Trabajos</h2>
     <div class="trabajos-container">
       <article class="trabajo-card">
@@ -180,48 +120,6 @@ const assetPath = (path: string) => `${basePath}/${path}`;
           <h3>Data Analyst</h3>
           <p>Análisis y visualización de datos para la toma de decisiones estratégicas basadas en evidencia.</p>
         </div>
-      </article>
-    </div>
-  </section>
-
-  <section id="funciones" class="funciones">
-    <h2>Funciones</h2>
-    <div class="funciones-container">
-      <article class="funcion-item">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
-        </svg>
-        <p>Construir e implementar componentes de IA agéntica.</p>
-      </article>
-      <article class="funcion-item">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-        </svg>
-        <p>Desarrollar agentes que utilizan herramientas (Tool-Using Agents).</p>
-      </article>
-      <article class="funcion-item">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-          <path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/>
-        </svg>
-        <p>Implementar flujos de razonamiento y ejecución de múltiples pasos.</p>
-      </article>
-      <article class="funcion-item">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-          <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58a.49.49 0 0 0 .12-.61l-1.92-3.32a.488.488 0 0 0-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.07.62-.07.94s.02.64.07.94l-2.03 1.58a.49.49 0 0 0-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
-        </svg>
-        <p>Implementar patrones de agentes: Planificador (Planner), Ejecutor (Executor), Validador (Validator).</p>
-      </article>
-      <article class="funcion-item">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-          <path d="M3 3h8v8H3V3zm0 10h8v8H3v-8zm10-10h8v8h-8V3zm0 10h8v8h-8v-8z"/>
-        </svg>
-        <p>Convertir diseños arquitectónicos en código funcional y mantenible.</p>
-      </article>
-      <article class="funcion-item">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-          <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
-        </svg>
-        <p>Garantizar que el comportamiento de los agentes sea acotado, predecible y esté alineado con la intención del sistema.</p>
       </article>
     </div>
   </section>
@@ -279,7 +177,7 @@ const assetPath = (path: string) => `${basePath}/${path}`;
     </div>
   </section>
 
-  <section id="habilidades" class="habilidades">
+  <section id="habilidades" class="habilidades" hidden aria-hidden="true">
     <h2>Habilidades</h2>
     <div class="habilidades-container">
       <article class="habilidad-item">

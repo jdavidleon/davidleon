@@ -1,0 +1,57 @@
+---
+import { badgeVariants } from "../../../components/core/badge";
+import { aiEngineeringTechnologies } from "../data/ai-engineering-technologies";
+import { expectedTechnicalSkills } from "../data/expected-technical-skills";
+---
+
+<section
+  id="habilidades-tecnicas"
+  class="expected-skills"
+  aria-labelledby="expected-skills-title"
+>
+  <div class="expected-skills__inner">
+    <header class="expected-skills__header">
+      <p class={badgeVariants({ variant: "highlight", className: "expected-skills__eyebrow" })}>
+        Perfil objetivo
+      </p>
+      <h2 id="expected-skills-title" class="expected-skills__title">
+        Habilidades técnicas esperadas
+      </h2>
+      <p class="expected-skills__lede">
+        Capacidades de automatización, cloud y datos que sostienen el rol de AI Engineer.
+      </p>
+    </header>
+
+    <ul class="expected-skills__grid">
+      {
+        expectedTechnicalSkills.map((skill, index) => (
+          <li class={`expected-skills__item expected-skills__item--${(index % 2) + 1}`}>
+            <div class="expected-skills__offset" aria-hidden="true"></div>
+            <article class="expected-skills__card">
+              <span class="expected-skills__index">{String(index + 1).padStart(2, "0")}</span>
+              <h3 class="expected-skills__label">{skill.label}</h3>
+              <p class="expected-skills__description">{skill.description}</p>
+            </article>
+          </li>
+        ))
+      }
+    </ul>
+
+    <footer class="expected-skills__toolkit" aria-labelledby="expected-skills-toolkit-title">
+      <div class="expected-skills__toolkit-heading">
+        <p class="expected-skills__toolkit-kicker">Stack de IA</p>
+        <h3 id="expected-skills-toolkit-title">Tecnologías de trabajo</h3>
+      </div>
+      <ul class="expected-skills__toolkit-list" role="list">
+        {
+          aiEngineeringTechnologies.map((technology, index) => (
+            <li class={`expected-skills__technology expected-skills__technology--${(index % 3) + 1}`}>
+              <span class="expected-skills__technology-mark" aria-hidden="true">{technology.mark}</span>
+              <span class="expected-skills__technology-label">{technology.label}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </footer>
+  </div>
+</section>
