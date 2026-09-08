@@ -1,71 +1,22 @@
-<!DOCTYPE html>
-<html lang="es">
+---
+import Layout from "../layouts/Layout.astro";
+import PortfolioHero from "../components/organisms/PortfolioHero.astro";
+import SiteHeader from "../components/organisms/SiteHeader.astro";
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <title>DLoen Portafolio CV</title>
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
+const assetPath = (path: string) => `${basePath}/${path}`;
+---
 
-  <meta name="description" content="Portafolio web personal, hola soy el desarrollador David León.">
-  <link rel="canonical" href="https://jdavidleon.github.io/davidleon">
-<!--  <link rel="favicon" href="https://jdavidleon.github.io/davidleon/image/favicon">  -->
-<!--  <link rel="apple-touch-icon" href="https://jdavidleon.github.io/davidleon/image/favicon"> -->
-  <meta name="theme-color" content="#0E1525">
-  <meta name="twitter:card" content="summary">
-  <meta property="og:type" content="website">
-  <meta property="og:title" name="twitter:title" content="DLeón Portafolio CV">
-  <meta property="og:description" name="twitter:description" content="Portafolio web personal, hola soy el desarrollador David León.">
-  <meta property="og:image" name="twitter:image" content="https://jdavidleon.github.io/davidleon/image/home_bg.jpeg">
-  <meta property="og:url" name="twitter:url" content="https://jdavidleon.github.io/davidleon">
+<Layout>
+  <SiteHeader />
 
-</head>
+  <main>
+    <PortfolioHero />
 
-<body>
-  <header class="header header-primary ">
-    <section class="container-header">
-      <div class="logo">
-        <a href="index.html">David Leon</a>
-      </div>
-      <button class="menu-btn">
-        <svg class="" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-          <path d="M4 6H20V8H4zM4 11H20V13H4zM4 16H20V18H4z" />
-        </svg>
-      </button>
-      <nav class="menu">
-        <a href="#start">Inicio</a>
-        <a href="#about">Acerca</a>
-        <a href="#service">Servicio</a>
-        <a href="#trabajos">Trabajos</a>
-        <a href="#contact">Contacto</a>
-      </nav>
-    </section>
-  </header>
-
-  <section id="start" class="home"> 
-    <article class="hero-image" style="--hero-image: url('image/home_bg.jpeg'); --hero-attachment: fixed;">
-      <aside class="hero-image-opacity">
-        <div class="hero-image-content">
-          <h2 class="hero-image-title">
-          HOLA MUNDO...
-          </h2>
-          <p class="hero-image-text">
-            Bienvenido a mi portafolio web
-          </p>
-          <p class="hero-image-text">
-            - desarrollador junior -
-          </p>
-        </div>
-      </aside>
-    </article>
-  </section>
-
-  <section id="about" class="about">
+    <section id="about" class="about">
     <article class="about-me">
       <aside class="about-text-title">
-        <h1 >David León</h1>
+        <h2>David León</h2>
         <h5>software developer</h5>
       </aside>
       <aside class="about-content">
@@ -84,7 +35,7 @@
           </div>
         </div>
         <div class="about-img-filling" style="margin: 2rem 0; margin-left: 2rem ">
-          <img src="image/about_filling.svg" alt="about filling ">
+          <img src={assetPath("image/about_filling.svg")} alt="about filling ">
         </div>
       </aside>      
     </article>
@@ -92,19 +43,19 @@
       <h2 class="">Mis Habilidades</h2>
       <div class="container-icon-tech">
         <figure>
-          <img class="tech-icon" src="image/logo_Python.svg" alt="Python">
+          <img class="tech-icon" src={assetPath("image/logo_Python.svg")} alt="Python">
         </figure>
         <figure>
-          <img class="tech-icon" src="image/logo_JavaScript.svg" alt="JavaScript">
+          <img class="tech-icon" src={assetPath("image/logo_JavaScript.svg")} alt="JavaScript">
         </figure>
         <figure>
-          <img class="tech-icon" src="image/logo_React.svg" alt="React">
+          <img class="tech-icon" src={assetPath("image/logo_React.svg")} alt="React">
         </figure>
         <figure>
-          <img class="tech-icon" src="image/logo_HTML.svg" alt="Html">
+          <img class="tech-icon" src={assetPath("image/logo_HTML.svg")} alt="Html">
         </figure>
         <figure>
-          <img class="tech-icon" src="image/logo_CSS.svg" alt="Css">
+          <img class="tech-icon" src={assetPath("image/logo_CSS.svg")} alt="Css">
         </figure>
       </div>
     </article>
@@ -276,7 +227,7 @@
   </section>
 
   <section id="contact" class="contact">
-    <div class="main-contact-container">
+    <div class="main-contact-container" style={`--card-image: url("${assetPath("image/content_card_bkg.svg")}")`}>
       <h2 class="contact-title">¿Interesado?</h2>
       <aside class="contact-tool">
         <article class="content-card">
@@ -372,10 +323,7 @@
         <p>Se valoran certificaciones adicionales en plataformas Cloud como AWS y Azure.</p>
       </article>
     </div>
-  </section>
+    </section>
 
-  <script src="script.js"></script>
-  
-</body>
-
-</html>
+  </main>
+</Layout>

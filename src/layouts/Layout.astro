@@ -1,0 +1,37 @@
+---
+import "../styles/global.css";
+
+const title = "DLoen Portafolio CV";
+const socialTitle = "DLeón Portafolio CV";
+const description = "Portafolio web personal, hola soy el desarrollador David León.";
+const canonicalUrl = new URL(import.meta.env.BASE_URL, Astro.site);
+const socialImageUrl = new URL(
+  `${import.meta.env.BASE_URL.replace(/\/$/, "")}/image/home_bg.jpeg`,
+  Astro.site,
+);
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%232e2e2e'/%3E%3Cpath d='M10 14h20c15 0 24 7 24 18S45 50 30 50H10zm12 10v16h8c8 0 12-3 12-8s-4-8-12-8z' fill='%23b5a642'/%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet" />
+    <title>{title}</title>
+
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta name="theme-color" content="#2E2E2E" />
+    <meta name="twitter:card" content="summary" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" name="twitter:title" content={socialTitle} />
+    <meta property="og:description" name="twitter:description" content={description} />
+    <meta property="og:image" name="twitter:image" content={socialImageUrl} />
+    <meta property="og:url" name="twitter:url" content={canonicalUrl} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,43 @@
+---
+import { aspectRatioVariants } from "../core/aspect-ratio";
+import { buttonVariants } from "../core/button";
+
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
+const heroImagePath = `${basePath}/image/home_bg.jpeg`;
+---
+
+<section id="start" class="home portfolio-hero" aria-labelledby="portfolio-hero-title">
+  <div class="portfolio-hero__inner">
+    <div class="portfolio-hero__copy">
+      <p class="portfolio-hero__eyebrow">AI Engineer / AI Developer</p>
+      <h1 id="portfolio-hero-title" class="portfolio-hero__title">
+        Jesús David<br />León Chito
+      </h1>
+      <p class="portfolio-hero__description">
+        Implemento soluciones de inteligencia artificial: IA agéntica, RAG, NLP e integración de LLMs para optimizar procesos empresariales.
+      </p>
+      <div class="portfolio-hero__actions">
+        <a class={buttonVariants({ variant: "ticket", size: "lg" })} href="#trabajos">View work</a>
+        <a class={buttonVariants({ variant: "outline", size: "lg" })} href="#contact">Contact</a>
+      </div>
+    </div>
+
+    <div class="portfolio-hero__visual">
+      <div class="portfolio-hero__offset" aria-hidden="true"></div>
+      <div class="portfolio-hero__tape" aria-hidden="true"></div>
+      <figure
+        class={aspectRatioVariants({ variant: "photo", className: "portfolio-hero__frame" })}
+        style="--ratio: 4 / 3;"
+      >
+        <img
+          src={heroImagePath}
+          alt="Illustration of a laptop displaying programming code"
+          width="6000"
+          height="4500"
+          fetchpriority="high"
+        />
+      </figure>
+      <p class="portfolio-hero__annotation">Current focus: agentic AI</p>
+    </div>
+  </div>
+</section>

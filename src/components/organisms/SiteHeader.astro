@@ -1,0 +1,70 @@
+---
+import { buttonVariants } from "../core/button";
+
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="site-header__brand" href={`${basePath}/`} aria-label="David Leon home">
+      <span>David</span> Leon
+    </a>
+
+    <button
+      class="site-header__menu-button"
+      type="button"
+      aria-label="Open navigation menu"
+      aria-controls="site-navigation"
+      aria-expanded="false"
+    >
+      <svg aria-hidden="true" viewBox="0 0 24 24" width="24" height="24">
+        <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path>
+      </svg>
+    </button>
+
+    <nav id="site-navigation" class="site-header__nav" aria-label="Primary navigation">
+      <div class="site-header__links">
+        <a href="#start">Inicio</a>
+        <a href="#about">Acerca</a>
+        <a href="#service">Servicio</a>
+        <a href="#trabajos">Trabajos</a>
+      </div>
+      <a class={buttonVariants({ variant: "ticket", size: "sm", className: "site-header__cta" })} href="#contact">
+        Contacto
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const header = document.querySelector<HTMLElement>(".site-header");
+  const menuButton = header?.querySelector<HTMLButtonElement>(".site-header__menu-button");
+  const navigation = header?.querySelector<HTMLElement>(".site-header__nav");
+
+  const closeMenu = () => {
+    navigation?.classList.remove("is-active");
+    menuButton?.setAttribute("aria-expanded", "false");
+    menuButton?.setAttribute("aria-label", "Open navigation menu");
+  };
+
+  menuButton?.addEventListener("click", () => {
+    const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+
+    navigation?.classList.toggle("is-active", !isOpen);
+    menuButton.setAttribute("aria-expanded", String(!isOpen));
+    menuButton.setAttribute("aria-label", isOpen ? "Open navigation menu" : "Close navigation menu");
+  });
+
+  navigation?.addEventListener("click", (event) => {
+    if (event.target instanceof Element && event.target.closest("a")) {
+      closeMenu();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && menuButton?.getAttribute("aria-expanded") === "true") {
+      closeMenu();
+      menuButton.focus();
+    }
+  });
+</script>
