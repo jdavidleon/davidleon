@@ -109,6 +109,7 @@ Use `8px` as the base corner radius.
 - **Cards:** `0.5rem` radius, surface background, `0 2px 12px rgba(0, 0, 0, 0.06)` shadow, and `1px` border.
 - **Inputs:** Label above field, `1px` border, `2px` accent focus ring with `2px` offset, and error text below. No floating labels.
 - **Navigation:** Primary surface with an accent indicator and weight 500 for the active item.
+- **Embedded video:** Keep videos responsive with `width: 100%` and `height: auto`, inside a framed, high-contrast container. Autoplaying video must be muted, looped, inline on mobile, and expose native controls so people can pause or replay it.
 - **Skeletons:** Shimmer matching the final component dimensions. No circular spinner.
 - **Empty states:** Icon, descriptive text, and an action button.
 

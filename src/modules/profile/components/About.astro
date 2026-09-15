@@ -1,0 +1,79 @@
+---
+const strengths = [
+  {
+    number: "01",
+    title: "IA agéntica",
+    description:
+      "Diseño agentes con tool calling, RAG, memoria y flujos Planner / Executor / Validator para resolver tareas de varios pasos.",
+    icon: "nodes",
+  },
+  {
+    number: "02",
+    title: "Automatización que entrega",
+    description:
+      "Conecto IA, APIs, UiPath y Power Automate para convertir procesos empresariales en soluciones mantenibles y trazables.",
+    icon: "bolt",
+  },
+  {
+    number: "03",
+    title: "Operación con criterio",
+    description:
+      "Integro cloud, datos y evaluación de LLMs para que cada sistema sea observable, acotado y útil en producción.",
+    icon: "eye",
+  },
+];
+
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
+const engineerVideoPath = `${basePath}/videos/_ _clip_id_clip_ingenie.mp4`;
+---
+
+<section id="sobre-mi" class="about-profile" aria-labelledby="about-profile-title">
+  <div class="about-profile__inner">
+    <header class="about-profile__header">
+      <p class="about-profile__eyebrow">Sobre mí / 01</p>
+      <h2 id="about-profile-title">IA con criterio.</h2>
+      <p class="about-profile__lede">
+        Soy Jesús David León Chito, AI Engineer / AI Developer. Construyo sistemas de IA agéntica que conectan herramientas, conocimiento y procesos de negocio para llevar ideas a producción.
+      </p>
+      <p class="about-profile__note">Menos promesas vacías. Más sistemas claros, medibles y útiles.</p>
+    </header>
+
+    <ol class="about-profile__strengths">
+      {
+        strengths.map((strength, index) => (
+          <li class={`about-profile__strength about-profile__strength--${index + 1}`}>
+            <article class="about-profile__card">
+              <span class="about-profile__number">{strength.number}</span>
+              <span class="about-profile__icon" aria-hidden="true">
+                {strength.icon === "nodes" && (
+                  <svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="3" /><circle cx="18" cy="6" r="3" /><circle cx="12" cy="18" r="3" /><path d="m8.5 7.5 2 7M15.5 7.5l-2 7M9 6h6" /></svg>
+                )}
+                {strength.icon === "bolt" && (
+                  <svg viewBox="0 0 24 24"><path d="m13 2-9 12h7l-1 8 10-13h-7z" /></svg>
+                )}
+                {strength.icon === "eye" && (
+                  <svg viewBox="0 0 24 24"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z" /><circle cx="12" cy="12" r="2.5" /></svg>
+                )}
+              </span>
+              <h3>{strength.title}</h3>
+              <p>{strength.description}</p>
+            </article>
+          </li>
+        ))
+      }
+    </ol>
+
+    <div class="about-profile__video" aria-labelledby="about-profile-video-title">
+      <div class="about-profile__video-heading">
+        <p>Formación / 02</p>
+        <h3 id="about-profile-video-title">Tecnólogo o Ingeniero</h3>
+      </div>
+      <div class="about-profile__video-frame">
+        <video autoplay muted loop playsinline controls preload="metadata">
+          <source src={engineerVideoPath} type="video/mp4" />
+          Tu navegador no permite reproducir este video.
+        </video>
+      </div>
+    </div>
+  </div>
+</section>

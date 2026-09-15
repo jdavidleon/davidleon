@@ -10,8 +10,7 @@ export const aiEngineeringTechnologies: AiEngineeringTechnology[] = [
   { id: "langchain", label: "LangChain", mark: "LC" },
   { id: "langgraph", label: "LangGraph", mark: "LG" },
   { id: "langsmith", label: "LangSmith", mark: "LS" },
-  { id: "rag", label: "RAG", mark: "RAG" },
-  { id: "fine-tuning", label: "Fine-Tuning", mark: "FT" },
-  { id: "harness", label: "Harness", mark: "H" },
-  { id: "mpc", label: "MPC", mark: "MPC" },
+  { id: "deepagents", label: "DeepAgents", mark: "DA" },
+  { id: "fastmpc", label: "FastMPC", mark: "FMPC" },
+  { id: "embeddings", label: "Embeddings", mark: "Em" },
 ];

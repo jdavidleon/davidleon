@@ -6,33 +6,39 @@ export type ExpectedTechnicalSkill = {
 
 export const expectedTechnicalSkills: ExpectedTechnicalSkill[] = [
   {
-    id: "uipath",
-    label: "UiPath",
-    description: "Arquitectura y componentes de UiPath.",
+    id: "RAG",
+    label: "RAG",
+    description:
+      "Generación Aumentada por Recuperación conectado a una base de conocimiento externo.",
   },
   {
-    id: "orchestrator",
-    label: "Orchestrator",
-    description: "Despliegue y administración de UiPath Orchestrator.",
+    id: "multi-agentes",
+    label: "Multi Agentes",
+    description:
+      "Múltiples inteligencias artificiales autónomas interactúan, colaboran o compiten para resolver problemas complejos.",
   },
   {
-    id: "servers",
-    label: "Windows / Linux",
-    description: "Administración de servidores Windows y Linux.",
+    id: "evaluación-observabilidad-y-operaciones ",
+    label: "Evaluación, Observabilidad y Operaciones",
+    description:
+      "Llevar un LLM a producción requiere monitoreo constante para evitar costos excesivos o respuestas erróneas.",
   },
   {
     id: "cloud",
-    label: "Azure / AWS / GCP",
-    description: "Entornos y plataformas cloud: Azure, AWS y GCP.",
+    label: "Cloud - Google/AWS",
+    description:
+      "Permitiendo que cualquiera acceda a sus datos, programas las 24/i.",
   },
   {
-    id: "power-bi",
-    label: "Power BI",
-    description: "Análisis de datos e informes con Microsoft Power BI.",
+    id: "harnesses",
+    label: "Harnesses",
+    description:
+      "Banco de pruebas automatizado. Es el conjunto de código, herramientas, datos y métricas diseñado para probar, evaluar y medir el rendimiento de un sistema bajo condiciones controladas.",
   },
   {
-    id: "databases",
-    label: "SQL Server / Oracle",
-    description: "Administración de bases de datos: SQL Server y Oracle.",
+    id: "memoria-avanzada-para-gentes",
+    label: "Memoria Avanzada para Agentes y LLMs",
+    description:
+      "Mantiene el hilo de la conversación actual optimizando la conversación sin perder ventanas de contexto.",
   },
 ];
